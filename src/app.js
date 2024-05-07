@@ -22,6 +22,9 @@ app.use(express.urlencoded({ extended: true }))
 app.use(cookieParser())
 app.use(cors())
 
+app.use('/', (req, res) => {
+    res.status(200).json({ message: 'Welcome to the Inventory API' })
+})
 app.use('/api/users', userRoute)
 app.use('/api/customer', customerRoute)
 
